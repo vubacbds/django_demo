@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.urls import reverse
 
 # các thử đăng ký
 from django.contrib.auth import login
@@ -15,7 +16,17 @@ from .forms2 import SignUpForm2
 
 
 def index(request):
-    return render(request, "pages/home.html")
+    # reverse('logout') đã bằng với {% url 'logout' %}
+    logout_url = reverse(
+        "logout"
+    )  # 'logout' là tên của URL pattern của trang đăng xuất
+    signup2_url = reverse("signup2")
+    login_url = reverse("login")
+    return render(
+        request,
+        "pages/home.html",
+        {"logout_url": logout_url, "signup2_url": signup2_url, "login_url": login_url},
+    )
 
 
 def contact(request):

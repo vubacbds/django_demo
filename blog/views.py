@@ -20,7 +20,7 @@ class PostListView(ListView):
     queryset = Post.objects.all().order_by("-date")
     template_name = "blog/blog.html"
     context_object_name = "Post"
-    paginate_by = 1
+    paginate_by = 2
 
 
 # trang details bài viết gốc

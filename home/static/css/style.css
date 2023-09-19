@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+  background-color: #f6f6f6;
+}
+
+/* Tùy chỉnh màu nền của form */
+form {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tùy chỉnh màu nền của nút Đăng ký */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Tùy chỉnh các trường input và label */
+input,
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 4px;
+}
+
+.link {
+  text-decoration: none;
+}

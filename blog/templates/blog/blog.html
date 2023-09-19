@@ -3,12 +3,14 @@
 {% block title %} Blog {% endblock %}
 {% block content %}
 {% for post in Post %}
-<h4>{{post.date|date:'d-m-Y'}} <a href="{% url 'post' post.id %}">{{post.title}}</a></h4>
+<p><a class='link' href="{% url 'post' post.id %}">{{post.title}} &nbsp; </a><span style="font-size: 10px">Ngày đăng:
+        {{post.date|date:'d-m-Y'}} </span></p>
 <img src="{{post.image.url}}" width='50px' height='50px' />
 {% endfor %}
 <br /><br />
 {% if page_obj.has_next %}
-<a href="{{request.path}}?page={{page_obj.next_page_number}}">Tiếp theo</a>
+<a href="{{request.path}}?page={{page_obj.next_page_number}}" class='link' style="color: gray; font-size: 12px">Next
+    Page >></a>
 {% endif %}
 
 
