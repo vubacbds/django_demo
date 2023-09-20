@@ -3,6 +3,10 @@ from .models import Post
 from django.http import Http404
 from django.views.generic import ListView, DetailView
 
+# để tạo api
+from rest_framework import viewsets
+from .serializers import TaskSerializer
+
 # thêm mấy cái này để làm commenr
 from django.http import HttpResponseRedirect
 from .forms_comments import CommentForm
@@ -64,3 +68,9 @@ def post(request, post_id):
         form = CommentForm()
     # comments = Comment.objects.filter(post=post)
     return render(request, "blog/post.html", {"form": form, "post": post})
+
+
+# để tạo api
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = TaskSerializer

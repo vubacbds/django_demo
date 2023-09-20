@@ -138,4 +138,13 @@ LOGOUT_REDIRECT_URL = "home"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+# đểo tạo api
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+    ],
+    # Các cài đặt khác của REST framework
+}
+
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

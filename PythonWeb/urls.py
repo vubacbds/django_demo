@@ -22,10 +22,18 @@ from django.conf.urls import handler404
 from django.conf.urls.static import static
 from django.conf import settings
 
+# để tạo API
+from rest_framework.routers import DefaultRouter
+from blog.views import TaskViewSet
+
+router = DefaultRouter()
+router.register(r"posts", TaskViewSet)
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("home.urls")),
     path("blog/", include("blog.urls")),
+    path("api/", include(router.urls)),
 ]
 
 # ghép đường dẫn ảnh, nếu deploy sever thì ko cần làm
