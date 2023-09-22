@@ -120,10 +120,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# thêm static này để khi deploy tất cả static về 1 chỗ
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# Đúng cách cấu hình STATIC_ROOT
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # static
 STATIC_URL = "static/"
-# thêm static này để khi deploy tất cả static về 1 chỗ
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# Cấu hình đường dẫn tới thư mục chứa các tệp tĩnh
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
+
 
 # đường dẫn ảnh, để thêm ảnh vào project gốc
 MEDIA_URL = "/media/"

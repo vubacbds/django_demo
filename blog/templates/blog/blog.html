@@ -9,7 +9,7 @@
 {% endfor %}
 <br /><br />
 {% if page_obj.has_next %}
-<a href="{{request.path}}?page={{page_obj.next_page_number}}" class='link' style="color: gray; font-size: 12px">Next
+<a href="{{request.path}}?page={{page_obj.next_page_number}}" class='link next_page'>Next
     Page >></a>
 {% endif %}
 

@@ -36,3 +36,48 @@ input {
 .link {
   text-decoration: none;
 }
+
+.nav_item {
+  color: #333;
+}
+
+.nav_item:hover {
+  color: #333;
+  border-bottom: 1px solid #bbb9b9;
+}
+
+.next_page {
+  color: gray;
+  font-size: 12px;
+}
+
+.next_page:hover {
+  border-bottom: 1px solid #bbb9b9;
+}
+
+.box_user {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+}
+
+.box_user_2 {
+  display: none;
+}
+
+.box_user:hover .box_user_2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: 0.08px solid rgb(239, 237, 237);
+  background-color: #fff;
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.box_user_2 a:hover {
+  border-bottom: 2px solid rgb(239, 237, 237);
+}

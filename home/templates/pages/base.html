@@ -6,14 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2" type="text/css" />
     <!-- link font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <title>{% block title %}{% endblock %}</title>
+    <style></style>
 </head>
 
 <body>
-    <div class="container-fluid" style='min-height: 95%'>
+    <div class="container-fluid" style="min-height: 95%">
         <div class="row">
             <div class="col-sm-2">
                 <div class="col d-flex justify-content-center" style="margin: 10px">
@@ -36,13 +37,22 @@
                     </button>
                     {% else %}
 
-                    <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="bottom" data-bs-html="true" data-bs-content=" <div>
+                    <div class="box_user">
+                        {% comment %} <button type="button" class="btn btn-secondary" data-bs-container="body"
+                            data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-content=" <div>
                         <a href='{{ signup2_url }}' class='link'>Đăng ký </a> &nbsp;
                         <a href='{{ login_url }}' class='link'>Đăng nhập</a>
                     </div>">
-                        <i class="far fa-user"></i>
-                    </button>
+                            <i class="far fa-user"></i>
+                        </button> {% endcomment %}
+                        <button type="button" class="btn btn-secondary">
+                            <i class="far fa-user"></i>
+                        </button>
+                        <div class="box_user_2">
+                            <a href="{% url 'signup2' %}" class='link'>Đăng ký </a>
+                            <a href="{% url 'login' %}" class='link'>Đăng nhập</a>
+                        </div>
+                    </div>
 
                     {% endif %}
                 </div>
@@ -51,37 +61,40 @@
         <br />
         <div class="row">
             <div class="col-sm-2">
-                <div class="bs-sliderbar" style='background-color: #fff'>
+                <div class="bs-sliderbar" style="background-color: #fff">
                     <ul class="nav flex-column">
-                        <li><a class='nav-link active' href="{% url 'home' %}">Thông tin cá nhân</a></li>
-                        <li><a class='nav-link' href="{% url 'blog' %}">Bài viết</a></li>
-                        <li><a class='nav-link' href="{% url 'contact' %}">Liên hệ</a></li>
+                        <li>
+                            <a class="nav-link active nav_item" href="{% url 'home' %}">Thông tin cá nhân</a>
+                        </li>
+                        <li><a class="nav-link nav_item" href="{% url 'blog' %}">Bài viết</a></li>
+                        <li>
+                            <a class="nav-link nav_item" href="{% url 'contact' %}">Liên hệ</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class=' col-sm-10'>
-                <div class='container-fluid'>
-                    {% block content %}{% endblock %}
-                </div>
+            <div class="col-sm-10">
+                <div class="container-fluid">{% block content %}{% endblock %}</div>
             </div>
         </div>
     </div>
     <footer>
-        <div class='container-fluid'>
-            <a class='link' href='#'><i class="fab fa-facebook-square"></i></a> | <a href='#' class='link'><i
-                    class="fab fa-youtube"></i></a> | <a href='#' class='link'><i
-                    class="fas fa-envelope-square"></i></a>
+        <div class="container-fluid">
+            <a class="link" href="#" style="color: blue"><i class="fab fa-facebook-square"></i></a> |
+            <a href="#" class="link" style="color: red"><i class="fab fa-youtube"></i></a> |
+            <a href="#" class="link" style="color: gray"><i class="fas fa-envelope-square"></i></a>
         </div>
     </footer>
-
 
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script>
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverTriggerList = [].slice.call(
+            document.querySelectorAll('[data-bs-toggle="popover"]')
+        );
         var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-            return new bootstrap.Popover(popoverTriggerEl)
-        })
+            return new bootstrap.Popover(popoverTriggerEl);
+        });
     </script>
 </body>
 
