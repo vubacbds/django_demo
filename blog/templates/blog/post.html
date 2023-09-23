@@ -2,25 +2,29 @@
 
 {% block title %} {{post.title}} {% endblock %}
 {% block content %}
-<h3><a href="{% url 'post' post.id %}">{{post.title}}</a></h3>
-<h5> on {{post.date}}</h5>
+<h3><a href="{% url 'post' post.id %}" class='link'>{{post.title}}</a></h3>
+<p> on {{post.date}}</p>
 {{post.body | safe | linebreaks}}
 <img src="{{post.image.url}}" width='150px' height='100px' />
-{% for comment in post.comments.all %}
-<h4><strong>{{comment.author}}</strong></h4>
-<h5>
-    <p>{{comment.date}}</p>
-</h5>
-<p>{{comment.body|linebreaks}}</p>
-{% endfor %}
+
+
 {% if user.username %}
 
-<form method="post">
+<form method="post" class="mt-4 mb-4">
     {% csrf_token %}
     <p><label>Bình luận: </label></p>
     {{ form.body}}
+
     {% comment %} {{ form.as_p }} {% endcomment %}
     <button type="submit">Gửi bình luận</button>
 </form>
 {% endif %}
+{% for comment in post.comments.all %}
+
+
+<div class="comment_item"><i class="comment_item_i">{{comment.body|linebreaks}}</i> <span
+        style="font-size: 12px">{{comment.author}}
+        {{ post.date|date:'d-m-Y H:m:s'}}</span></div>
+
+{% endfor %}
 {% endblock %}

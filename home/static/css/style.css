@@ -81,3 +81,34 @@ input {
 .box_user_2 a:hover {
   border-bottom: 2px solid rgb(239, 237, 237);
 }
+
+#id_body {
+  /* CSS tùy chỉnh cho trường input file */
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  height: 120px;
+  /* Thêm các thuộc tính CSS khác theo nhu cầu của bạn */
+}
+
+.post_item {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.comment_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.6px solid rgb(193, 198, 193);
+}
+
+.comment_item_i p {
+  line-height: normal;
+  margin-top: 13px;
+}
+/* .hr_comment {
+  border: 0.6px solid rgb(193, 198, 193);
+} */
