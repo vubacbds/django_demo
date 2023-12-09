@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-axszhxv4q$j^@**wj80c+m9^@#z9t)4x#@tq*gr^z7yhp@v4t5
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Khi deploy thì nên sửa là False nếu ko thì nó báo cả lỗi lên
-DEBUG = True
+DEBUG = False
 
 # cho phép các host có thể truy cập vào trang web
 ALLOWED_HOSTS = ["*"]
